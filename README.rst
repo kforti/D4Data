@@ -4,7 +4,7 @@
 ======
 D4Data
 ======
-| Engineered Data with python
+Engineered Data with python
 
 .. image:: https://img.shields.io/pypi/v/d4data.svg
         :target: https://pypi.python.org/pypi/d4data
@@ -26,6 +26,7 @@ Proof of concept project for python data engineering. Envisioned use cases:
 Example API:
  - Define your data
 
+
 ```python
 from d4data.storage_clients import FTPStorageClient
 from d4data.sources import CSVDataSource
@@ -46,6 +47,7 @@ class NIHChromosomeSNPS38(CSVDataSource):
 ```
 
  - Download data
+
 
 ```python
 data = NIHChromosomeSNPS38(chromosome=1, local_path="./datasources")

@@ -6,16 +6,6 @@ D4Data
 ======
 Data Engineered with python
 
-.. image:: https://img.shields.io/pypi/v/d4data.svg
-        :target: https://pypi.python.org/pypi/d4data
-
-.. image:: https://img.shields.io/travis/kforti/d4data.svg
-        :target: https://travis-ci.com/kforti/d4data
-
-.. image:: https://readthedocs.org/projects/d4data/badge/?version=latest
-        :target: https://d4data.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
-
 
 Proof of concept project for python data engineering. Envisioned use cases:
     - Data access and sharing with data defined as code.

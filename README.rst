@@ -4,7 +4,7 @@
 ======
 D4Data
 ======
-| Data Engineered
+| Engineered Data with python
 
 .. image:: https://img.shields.io/pypi/v/d4data.svg
         :target: https://pypi.python.org/pypi/d4data
@@ -43,7 +43,6 @@ class NIHChromosomeSNPS38(CSVDataSource):
 
         # assign a storage client
         self.client = FTPStorageClient()
-
 ```
 
  - Download data
@@ -54,7 +53,6 @@ data = NIHChromosomeSNPS38(chromosome=1, local_path="./datasources")
 # calls client.download(uri=self.uri)
 data.to_disk()
 dataset = data.to_dataset()
-
 ```
 
 * Free software: Apache Software License 2.0

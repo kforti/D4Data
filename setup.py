@@ -11,7 +11,7 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = ['requests==2.22.0',
-                'pytorch',
+                'torch',
                 'prefect',
                 'google-cloud-storage']
 
@@ -42,7 +42,7 @@ setup(
     },
     install_requires=requirements,
     license="Apache Software License 2.0",
-    long_description="https://github.com/kforti/d4data",
+    long_description=readme,
     include_package_data=True,
     keywords='d4data',
     name='d4data',
@@ -51,6 +51,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/kforti/d4data',
-    version='0.1.0',
+    version='0.1.1',
     zip_safe=False,
 )

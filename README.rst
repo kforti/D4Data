@@ -1,5 +1,5 @@
 
-.. image:: ./logo.png
+.. image:: /logo.png
 
 ======
 D4Data
@@ -16,9 +16,8 @@ Proof of concept project for python data engineering. Envisioned use cases:
 Installation
 ------------
 .. code-block:: bash
-    git clone git@github.com:kforti/D4Data.git
-    cd D4Data
-    pip install .
+
+    pip install d4data
 
 Example API:
 ------------

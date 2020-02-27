@@ -23,9 +23,16 @@ Proof of concept project for python data engineering. Envisioned use cases:
     - Data transfer and partitioning for distributed computing.
     - Go from remote data sources to model training with simple and expressive python.
 
+Installation
+------------
+.. code-block:: bash
+    git clone git@github.com:kforti/D4Data.git
+    cd D4Data
+    pip install .
+
 Example API:
 ------------
-Define data
+Define data as code
 
 .. code-block:: python
 
@@ -47,7 +54,7 @@ Define data
             self.client = FTPStorageClient()
 
 
-- Download data
+- Download data programmatically
 
 .. code-block:: python
 

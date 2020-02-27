@@ -24,8 +24,7 @@ Proof of concept project for python data engineering. Envisioned use cases:
     - Go from remote data sources to model training with simple and expressive python.
 
 Example API:
- - Define your data
-
+ - Define data
 
 .. code-block:: python
 
@@ -46,8 +45,8 @@ Example API:
             # assign a storage client
             self.client = FTPStorageClient()
 
- - Download data
 
+- Download data
 
 .. code-block:: python
 
@@ -55,8 +54,19 @@ Example API:
 
     # calls client.download(uri=self.uri)
     data.to_disk()
-    dataset = data.to_dataset()
 
+- Process data
+.. code-block:: python
+
+    dataset = data.to_dataset()
+    for i in range(len(dataset)):
+        some_func(dataset[i])
+
+- Prefect Integration
+    - TODO
+
+- Pytorch integration
+    - TODO
 
 * Free software: Apache Software License 2.0
 * Documentation: https://d4data.readthedocs.io.

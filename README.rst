@@ -56,17 +56,16 @@ Example API:
     data.to_disk()
 
 - Process data
+
 .. code-block:: python
 
     dataset = data.to_dataset()
     for i in range(len(dataset)):
         some_func(dataset[i])
 
-- Prefect Integration
-    - TODO
+- Prefect Integration: TODO
 
-- Pytorch integration
-    - TODO
+- Pytorch Integration: TODO
 
 * Free software: Apache Software License 2.0
 * Documentation: https://d4data.readthedocs.io.

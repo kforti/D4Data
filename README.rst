@@ -28,6 +28,7 @@ Example API:
 
 
 .. code-block:: python
+
     from d4data.storage_clients import FTPStorageClient
     from d4data.sources import CSVDataSource
 
@@ -49,6 +50,7 @@ Example API:
 
 
 .. code-block:: python
+
     data = NIHChromosomeSNPS38(chromosome=1, local_path="./datasources")
 
     # calls client.download(uri=self.uri)

@@ -1,5 +1,5 @@
 
-.. image:: /logo.png
+.. image:: https://github.com/kforti/D4Data/blob/master/logo.png
 
 ======
 D4Data

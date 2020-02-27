@@ -116,8 +116,9 @@ Define data as code
 * Documentation: https://d4data.readthedocs.io.
 
 
-Features
+Contact
 --------
 
-* TODO
+If you are interested in this project and would like to share your use cases, email me at:
+kevin.r.fortier@gmail.com
 

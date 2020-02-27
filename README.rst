@@ -4,6 +4,10 @@
 ======
 D4Data
 ======
+
+.. image:: https://img.shields.io/pypi/v/d4data.svg
+        :target: https://pypi.python.org/pypi/d4data
+
 Data Engineered with python
 
 

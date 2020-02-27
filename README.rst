@@ -1,3 +1,6 @@
+
+.. image:: ./logo.png
+
 ======
 D4Data
 ======

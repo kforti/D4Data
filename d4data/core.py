@@ -1,47 +1,25 @@
+import os
+from dataclasses import dataclass
+
 from torch.utils.data.dataset import Dataset
+from build.lib.d4data.core import StorageClient
 
 
 
+CONTEXT = {"cloud": None,
+           "sources": []}
+
+
+class D4Dataset(Dataset):
+    pass
+
+
+@dataclass
 class DataSource:
-    def __init__(self, local_path=None):
-        self._local_path = local_path
-        self.name = "Datasource"
 
     def to_disk(self):
-        raise NotImplemented
-
-    def to_memfs(self):
-        raise NotImplemented
-
-    def to_dataset(self):
-        raise NotImplemented
-
-    @property
-    def local_paths(self):
-        return self._local_paths
-
-    @local_paths.setter
-    def local_paths(self, value):
-        self._local_paths = value
-
-    @property
-    def uri(self):
-        return self._uri
-
-    @uri.setter
-    def uri(self, value):
-        self._uri = value
-
-    def __str__(self):
-        return self.name
-
-
-class StorageClient:
-    def __init__(self):
-        pass
-
-    def download(self):
-        pass
+        """ Downloads datasource from uri to local path; will take arguments- and set object attributes to those arguments- or default to objecta attributes."""
+        self.client.download(self.uri, self._local_path)
 
 
 class CompositeDataSource:
@@ -65,12 +43,11 @@ class CompositeDataSource:
         self._sources[key] = value
 
 
-class DataStrategy:
-    pass
+def catalog(cls):
+    CONTEXT["sources"].append(cls)
+    return cls
 
-
-class D4Dataset(Dataset):
-    def to_dataset(self):
-        raise NotImplemented
+def get_sources():
+    return CONTEXT["sources"]
 
 

@@ -1,7 +1,7 @@
 import requests
 
 from tqdm import tqdm
-from ..core import StorageClient
+from ..sources import StorageClient
 
 
 class HTTPStorageClient(StorageClient):

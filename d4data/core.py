@@ -1,53 +1,21 @@
-import os
-from dataclasses import dataclass
 
-from torch.utils.data.dataset import Dataset
-from build.lib.d4data.core import StorageClient
+def download(source, dest=None):
+    """ Downloads datasource from uri to local path; will take arguments- and set object attributes to those arguments- or default to objects attributes."""
+    if dest:
+        source.local_url = dest
+    return source.client.download(source.remote_url, source.local_url)
 
+def upload(source, dest=None):
+    """ Upload local to uri (dest=None) or some other dest"""
+    if not dest:
+        dest = source.remote_url
+    return source.client.upload(source.local_url, dest)
 
-
-CONTEXT = {"cloud": None,
-           "sources": []}
-
-
-class D4Dataset(Dataset):
-    pass
-
-
-@dataclass
-class DataSource:
-
-    def to_disk(self):
-        """ Downloads datasource from uri to local path; will take arguments- and set object attributes to those arguments- or default to objecta attributes."""
-        self.client.download(self.uri, self._local_path)
-
-
-class CompositeDataSource:
-    def __init__(self, sources=None):
-        self._sources = {}
-        if sources:
-            for s in sources:
-                self._sources[s.name] = s
-
-    def add(self, source):
-        self._sources[source.name] = source
-
-    def __iter__(self):
-        self._count = 0
-        return iter([source for name, source in self._sources.items()])
-
-    def __getitem__(self, item):
-        return self._sources[item.name]
-
-    def __setitem__(self, key, value):
-        self._sources[key] = value
-
-
-def catalog(cls):
-    CONTEXT["sources"].append(cls)
-    return cls
-
-def get_sources():
-    return CONTEXT["sources"]
-
-
+def send(source, dest, src="remote"):
+    if src == "remote":
+        src = source.remote_url
+    elif src == "local":
+        src = source.local_url
+    else:
+        raise Exception("src must be either local or remote")
+    return source.client.send(src, dest)

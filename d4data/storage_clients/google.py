@@ -1,6 +1,6 @@
 
 from google.cloud import storage
-from ..core import StorageClient
+from ..sources import StorageClient
 
 class GoogleStorageClient(StorageClient):
     def __init__(self):

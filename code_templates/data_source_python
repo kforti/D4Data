@@ -1,0 +1,7 @@
+from dataclasses import dataclass
+
+
+@dataclass
+class {{ source_name }}:
+    def say_hi(self):
+        print('hi')

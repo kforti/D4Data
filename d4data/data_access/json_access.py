@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 
-class JSONDataAccess:
+class LocalJSONDataAccess:
     def __init__(self, base_path=""):
         self.base_path = Path(base_path)
 
@@ -51,8 +51,19 @@ class JSONDataAccess:
         shutil.copy2(src, dest)
         return None
 
+    def __iter__(self):
+        return self
 
-def load_json(path):
-    dao = JSONDataAccess(base_path="")
+    def __next__(self):
+        pass
+
+
+def load_json_data(path):
+    dao = LocalJSONDataAccess(base_path="")
     data = dao.read(name=path)
     return data
+
+
+def save_json_data(path, data):
+    dao = LocalJSONDataAccess(base_path="")
+    return dao.put(path, data)

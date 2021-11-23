@@ -1,1 +1,1 @@
-from .json_access import JSONDataAccess
+from .json_access import LocalJSONDataAccess

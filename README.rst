@@ -8,10 +8,12 @@ D4Data
 .. image:: https://img.shields.io/pypi/v/d4data.svg
         :target: https://pypi.python.org/pypi/d4data
 
+
 Data Engineered with python
 
+Access and manipulate data from various sources with python.
 
-Proof of concept project for python data engineering. Envisioned use cases:
+Envisioned use cases:
     - Data access and sharing with data defined as code.
     - Data catologing and discovery.
     - Data transfer and partitioning for distributed computing.
